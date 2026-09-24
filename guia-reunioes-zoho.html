@@ -710,12 +710,46 @@
       </div>
     </div>
 
-    <h3 class="subhead">Página de detalhes da reunião</h3>
+    <h3 class="subhead">Abas de uma reunião</h3>
+    <p class="lead" style="margin-bottom:8px">Ao abrir o registro de uma reunião, quatro abas organizam as informações no topo da página:</p>
+    <div class="flow">
+      <div class="flow-card">
+        <span class="step-tag">Aba 1</span>
+        <h4>Detalhes</h4>
+        <p>Dados gerais do agendamento: data, hora, duração, participantes e tipo de reunião.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-tag">Aba 2</span>
+        <h4>Agenda</h4>
+        <p>A pauta descrita no agendamento — os tópicos e objetivos do encontro.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-tag">Aba 3</span>
+        <h4>Comentários</h4>
+        <p>Registro de decisões, links de pull requests e deliberações da reunião.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-tag">Aba 4</span>
+        <h4>Quadro de horários</h4>
+        <p>Registro do tempo que os participantes dedicaram à reunião.</p>
+      </div>
+    </div>
+
     <p class="lead" style="margin-bottom:8px">Na barra lateral direita, duas ações centrais:</p>
     <ul style="margin:0 0 0 20px;color:var(--ink-soft);font-size:.95rem">
       <li style="margin-bottom:6px"><strong>Botão Add (+):</strong> anexar complementos de pauta em tempo real e registrar comentários durante ou após a chamada.</li>
       <li><strong>Botão Delete:</strong> permite ao Admin ou Manager remover o registro caso tenha sido cancelado.</li>
     </ul>
+
+    <h3 class="subhead">Registrar horas — aba Quadro de horários</h3>
+    <p class="lead" style="margin-bottom:8px">A aba <strong>Quadro de horários</strong> acompanha e mantém o tempo que os usuários gastaram trabalhando na reunião. Enquanto nenhuma hora foi apontada, ela exibe o aviso <em>"Parece que você ainda não adicionou horas de registro"</em>.</p>
+    <ol class="steps">
+      <li><p>Abra a reunião desejada e clique na aba <span class="ui">Quadro de horários</span>.</p></li>
+      <li><p>Clique no botão <span class="ui">+ Log de Horas</span>, no centro da tela.</p></li>
+      <li><p>No formulário exibido, informe o <strong>colaborador</strong>, a <strong>data</strong> e a <strong>quantidade de horas</strong> dedicadas à reunião.</p></li>
+      <li><p>Salve o registro. A aba passa a exibir o total de horas apontadas por participante naquela reunião.</p></li>
+    </ol>
+    <div class="tip"><span class="callout-label">ℹ Para que serve</span>Esse registro alimenta o controle de esforço do squad, permitindo comparar o tempo efetivamente investido em reuniões com o tempo planejado no Sprint.</div>
 
     <div class="produto"><span class="callout-label">★ Produto da cerimônia: memória técnica</span>Estimule os desenvolvedores a usar os <strong>Comentários da reunião</strong> para postar links de pull requests, decisões de arquitetura e design. Isso transforma a aba <strong>Completed</strong> em um histórico valioso para a Review.</div>
   </section>
