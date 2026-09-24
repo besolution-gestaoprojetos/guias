@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manual da Squad — Be Solution</title>
+<title>Reuniões no Zoho Sprints — Be Solution</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,6 +17,9 @@
     --manila-deep:#0c4a6e;
     --kraft:#0c4a6e;
     --line:#d3e5f0;
+    --rose-bg:#f6e3dc;
+    --rose-line:#e7c9bd;
+    --rose-text:#9c3b21;
     --radius:10px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -81,16 +84,27 @@
     font-size:clamp(2rem,5vw,3.4rem);
     line-height:1.08;
     letter-spacing:-.01em;
-    max-width:18ch;
+    max-width:20ch;
   }
   .header-sub{
     margin-top:18px;
-    max-width:60ch;
+    max-width:62ch;
     color:#cbd5e1;
     font-size:1.02rem;
   }
+  .header-meta{
+    margin-top:22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px 26px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.8rem;
+    color:#94a3b8;
+    position:relative;z-index:1;
+  }
+  .header-meta strong{color:#e2e8f0;font-weight:500}
   .path-strip{
-    margin-top:40px;
+    margin-top:28px;
     font-family:'IBM Plex Mono',monospace;
     font-size:.82rem;
     color:var(--ink);
@@ -130,6 +144,13 @@
   }
   h2 .num{color:var(--manila-deep);font-variation-settings:'wdth' 75;margin-right:10px}
   p.lead{color:var(--ink-soft);max-width:66ch}
+  h3.subhead{
+    font-family:'Archivo',sans-serif;
+    font-weight:700;
+    font-size:1.05rem;
+    margin:22px 0 8px;
+    color:var(--ink);
+  }
 
   /* ---------- NAV / TOC ---------- */
   nav.toc{
@@ -152,7 +173,7 @@
   nav.toc a::before{content:"→ ";color:var(--manila-deep)}
 
   /* ---------- TOOLBAR ---------- */
-  .toolbar{display:flex;gap:10px;margin-top:22px}
+  .toolbar{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
   .toolbar button{
     font-family:'IBM Plex Mono',monospace;
     font-size:.78rem;
@@ -205,7 +226,7 @@
     transform:rotate(45deg);
     transition:transform .2s;
   }
-  details.acc[open] > .acc-caret, details.acc[open] > summary .acc-caret{transform:rotate(-135deg)}
+  details.acc[open] > summary .acc-caret{transform:rotate(-135deg)}
   .acc-body{padding:20px 22px}
   .acc-body p{color:var(--ink-soft);max-width:66ch;margin-bottom:10px;font-size:.95rem}
   .acc-body p:last-child{margin-bottom:0}
@@ -228,24 +249,129 @@
     background:#e0f2fe;
     border-left:4px solid var(--manila);
     border-radius:0 8px 8px 0;
-    padding:12px 16px;
+    padding:14px 18px;
     font-size:.92rem;
-    margin-bottom:14px;
+    margin:14px 0;
     max-width:66ch;
   }
   .produto strong{color:var(--manila-deep)}
   .tip{
-    margin-top:12px;
     background:#e0f2fe;
     border-left:4px solid var(--manila-deep);
     border-radius:0 8px 8px 0;
-    padding:12px 16px;
+    padding:14px 18px;
     font-size:.9rem;
+    margin:14px 0;
     max-width:66ch;
   }
   .tip strong{color:var(--kraft)}
+  .callout-alert{
+    background:var(--rose-bg);
+    border-left:4px solid var(--rose-text);
+    border-radius:0 8px 8px 0;
+    padding:14px 18px;
+    font-size:.92rem;
+    margin:14px 0;
+    max-width:66ch;
+    color:#7a2a17;
+  }
+  .callout-alert strong{color:var(--rose-text)}
+  .callout-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:6px;
+    color:var(--manila-deep);
+  }
+  .callout-alert .callout-label{color:var(--rose-text)}
 
-  /* ---------- DUO (o quê × o como) ---------- */
+  /* ---------- TABLE ---------- */
+  .table-wrap{
+    overflow-x:auto;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin:16px 0;
+  }
+  table.dtable{width:100%;border-collapse:collapse;font-size:.88rem;min-width:520px}
+  table.dtable th{
+    background:var(--paper-dim);
+    color:var(--ink-soft);
+    font-weight:600;
+    text-align:left;
+    padding:11px 14px;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  table.dtable td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-soft);
+    vertical-align:top;
+  }
+  table.dtable td strong{color:var(--ink)}
+  table.dtable tbody tr:last-child td{border-bottom:none}
+  table.dtable tbody tr:hover{background:var(--paper-dim)}
+
+  /* ---------- CHAIN (fluxo curto) ---------- */
+  .chain{
+    display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    border-left:4px solid var(--manila);
+    border-radius:0 8px 8px 0;
+    padding:16px 18px;
+    margin:20px 0;
+  }
+  .chain-step{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.78rem;font-weight:500;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:6px 12px;
+    color:var(--ink);
+  }
+  .chain-arrow{color:var(--manila-deep);font-weight:700}
+
+  /* ---------- STEPS ---------- */
+  ol.steps{list-style:none;margin-top:22px;counter-reset:step}
+  ol.steps > li{
+    counter-increment:step;
+    position:relative;
+    padding:0 0 30px 56px;
+  }
+  ol.steps > li::before{
+    content:counter(step,decimal-leading-zero);
+    position:absolute;left:0;top:-2px;
+    font-family:'Archivo',sans-serif;
+    font-variation-settings:'wdth' 75;
+    font-weight:800;font-size:1.3rem;
+    color:var(--manila-deep);
+    width:40px;text-align:right;
+  }
+  ol.steps > li::after{
+    content:"";position:absolute;left:44px;top:30px;bottom:6px;
+    width:1px;background:var(--line);
+  }
+  ol.steps > li:last-child::after{display:none}
+  ol.steps p{color:var(--ink-soft);max-width:62ch;font-size:.94rem;margin:0}
+  kbd, .ui{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.83em;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    border-bottom-width:2px;
+    border-radius:5px;
+    padding:1px 7px;
+    white-space:nowrap;
+  }
+
+  /* ---------- DUO ---------- */
   .duo{
     display:grid;
     grid-template-columns:1fr auto 1fr;
@@ -266,13 +392,16 @@
   .duo-card h4{font-family:'Archivo',sans-serif;font-size:1.05rem;margin-bottom:4px}
   .duo-card .who{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--manila-deep);text-transform:uppercase;letter-spacing:.1em}
   .duo-card p{font-size:.88rem;color:var(--ink-soft);margin-top:6px}
+  .duo-card ul{margin:8px 0 0 16px;font-size:.85rem;color:var(--ink-soft)}
+  .duo-card ul li{margin-bottom:4px}
+  .duo-card ul strong{color:var(--ink)}
   @media (max-width:560px){.duo{grid-template-columns:1fr}.duo .x{justify-self:center}}
 
-  /* ---------- FLOW (prazo de trás pra frente) ---------- */
+  /* ---------- FLOW (etapas / lifecycle) ---------- */
   .flow{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:12px;margin:14px 0;
+    gap:12px;margin:16px 0;
   }
   .flow-card{
     border:1px solid var(--line);
@@ -294,90 +423,14 @@
   }
   .flow-card h4{font-family:'Archivo',sans-serif;font-size:1rem;margin:4px 0}
   .flow-card p{font-size:.85rem;color:var(--ink-soft)}
-  .flow-note{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--manila-deep);margin-bottom:6px}
-
-  /* ---------- STATS (capacidade) ---------- */
-  .stats{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
-  .stat{
-    flex:1;min-width:150px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:14px 18px;
-    text-align:center;
-  }
-  .stat .n{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.6rem;color:var(--manila-deep)}
-  .stat .l{font-size:.8rem;color:var(--ink-soft)}
-  .stat.alert{background:#0f172a;border-color:#0f172a}
-  .stat.alert .n{color:var(--manila)}
-  .stat.alert .l{color:#cbd5e1}
-
-  /* ---------- CARDS SEQUENCE ---------- */
-  .seq{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}
-  .seq-card{
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:10px 14px;
-    text-align:center;
-    background:var(--paper-dim);
-    min-width:96px;
-  }
-  .seq-card .n{font-family:'Archivo',sans-serif;font-weight:800;color:var(--manila-deep);font-size:1.15rem}
-  .seq-card .h{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ink-soft)}
-  .seq-arrow{color:var(--manila-deep);font-weight:700}
-
-  /* ---------- RITES OVERVIEW ---------- */
-  .rites{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:12px;margin-top:24px;
-  }
-  .rite{
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:14px;
-    text-align:center;
-    background:var(--paper);
-    position:relative;
-  }
-  .rite::before{
-    content:"";position:absolute;top:0;left:14px;
-    width:36px;height:5px;background:var(--manila);
-    border-radius:0 0 4px 4px;
-  }
-  .rite .n{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 75;font-weight:800;color:var(--manila-deep);font-size:1.3rem;margin-top:6px}
-  .rite h4{font-family:'Archivo',sans-serif;font-size:.98rem;margin:2px 0 4px}
-  .rite .t{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--ink-soft)}
-
-  /* ---------- ROLE CARDS ---------- */
-  .role-star{
-    font-family:'IBM Plex Mono',monospace;font-size:.72rem;
-    color:var(--manila-deep);background:#e0f2fe;
-    border-radius:99px;padding:2px 10px;border:1px solid var(--line);
-  }
-  blockquote{
-    border-left:4px solid var(--manila);
-    padding:10px 18px;
-    margin:18px 0;
-    color:var(--ink-soft);
-    font-style:italic;
-    background:var(--paper-dim);
-    border-radius:0 8px 8px 0;
-    max-width:66ch;
-  }
-  .tripe{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
-  .tripe div{
-    border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center;background:var(--paper-dim);
-  }
-  .tripe strong{font-family:'Archivo',sans-serif;display:block;color:var(--manila-deep)}
-  .tripe span{font-size:.8rem;color:var(--ink-soft)}
 
   /* ---------- RULES OK/NO ---------- */
-  .rules{margin-top:28px;display:grid;gap:12px}
+  .rules{margin-top:14px;display:grid;gap:12px}
   .rule{
     display:flex;gap:14px;align-items:flex-start;
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:18px 20px;
+    padding:16px 18px;
     background:var(--paper);
   }
   .rule .mark{
@@ -387,13 +440,8 @@
   }
   .rule.ok .mark{background:#dcf1e3;color:#2e6b45}
   .rule.no .mark{background:#f6e3dc;color:#9c3b21}
-  .rule h3{font-family:'Archivo',sans-serif;font-size:1.05rem;margin-bottom:4px}
   .rule p{font-size:.93rem;color:var(--ink-soft)}
   .rule strong{color:var(--ink)}
-  .rule .q{
-    font-family:'IBM Plex Mono',monospace;font-size:.85rem;
-    color:var(--manila-deep);margin-top:8px;display:block;
-  }
 
   /* ---------- SUPPORT / FOOTER ---------- */
   .support{
@@ -408,22 +456,20 @@
     font-size:1.15rem;margin-bottom:8px;
   }
   .support .mono{font-family:'IBM Plex Mono',monospace;color:var(--manila);font-size:.95rem}
-  kbd, .ui{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.83em;
-    background:var(--paper-dim);
-    border:1px solid var(--line);
-    border-bottom-width:2px;
-    border-radius:5px;
-    padding:1px 7px;
-    white-space:nowrap;
-  }
   footer{
     border-top:1px solid var(--line);
     padding:26px 24px 40px;
     text-align:center;
     font-size:.82rem;color:var(--ink-soft);
     font-family:'IBM Plex Mono',monospace;
+  }
+
+  @media print{
+    .brandbar, nav.toc, .toolbar{display:none!important}
+    header{background:#fff!important;color:#000!important}
+    header::before{display:none}
+    .eyebrow, .header-sub, .header-meta{color:#333!important}
+    .path-strip{background:#eee!important;color:#000!important}
   }
 </style>
 </head>
@@ -435,403 +481,300 @@
     <nav class="brandbar-nav" aria-label="Guias">
       <a href="index.html">Início</a>
       <a href="guia-drive-projetos.html">Guia Drive</a>
-      <a href="manual-squad-besolution.html" class="active">Manual da Squad</a>
-      <a href="guia-reunioes-zoho.html">Reuniões Zoho</a>
+      <a href="manual-squad-besolution.html">Manual da Squad</a>
+      <a href="guia-reunioes-zoho.html" class="active">Reuniões Zoho</a>
     </nav>
   </div>
 </div>
 
 <header>
   <div class="header-inner">
-    <p class="eyebrow">Documento interno · Padronização de Squads</p>
-    <h1>Manual básico da Squad</h1>
-    <p class="header-sub">As regras que todo o time da squad deve seguir — e que o GP e o SM, como guardiões do método, fazem valer — para a squad rodar com ritmo, agenda e previsibilidade.</p>
-    <div class="path-strip" aria-label="As 5 cerimônias">
-      <span>Refinamento</span><span>Planning</span><span>Daily</span><span>Showcase</span><span>Review</span>
+    <p class="eyebrow">Guia interno · Zoho Sprints</p>
+    <h1>Reuniões no Zoho Sprints</h1>
+    <p class="header-sub">Manual de utilização do módulo Reuniões (Meetings): fluxo operacional, parametrização de cerimônias Scrum, lembretes automáticos e boas práticas corporativas.</p>
+    <div class="header-meta">
+      <span>Plataforma: <strong>Zoho Sprints</strong></span>
+      <span>Escopo: <strong>8 tipos de reunião do Squad Be Solution</strong></span>
+    </div>
+    <div class="path-strip" aria-label="Cerimônias do Squad Be Solution">
+      <span>Review</span><span>Showcase</span><span>Planning</span><span>Refinamento</span><span>Daily · Cliente</span><span>Daily · Be Solution</span><span>Não recorrente · Be Solution</span><span>Não recorrente · Cliente</span>
     </div>
   </div>
 </header>
 
 <main>
-  <nav class="toc" aria-label="Índice do manual">
-    <a href="#principios">01 Princípios</a>
-    <a href="#ritos">02 Os ritos</a>
-    <a href="#papeis">03 Os papéis</a>
-    <a href="#horas">04 Horas adicionais</a>
-    <a href="#ferramentas">05 Ferramentas</a>
-    <a href="#regra-ouro">06 A regra de ouro</a>
+  <nav class="toc" aria-label="Índice do guia">
+    <a href="#sec-01">01 Visão Geral</a>
+    <a href="#sec-02">02 Criar Reunião</a>
+    <a href="#sec-03">03 Recorrentes</a>
+    <a href="#sec-04">04 Lembretes</a>
+    <a href="#sec-05">05 Acompanhamento</a>
+    <a href="#sec-06">06 Editar e Excluir</a>
+    <a href="#sec-07">07 Dicas Práticas</a>
   </nav>
 
   <div class="toolbar">
     <button type="button" onclick="toggleAll(true)">+ Expandir tudo</button>
     <button type="button" onclick="toggleAll(false)">− Recolher tudo</button>
+    <button type="button" onclick="window.print()">🖨 Imprimir / Salvar em PDF</button>
   </div>
 
-  <!-- 01 PRINCÍPIOS -->
-  <section id="principios">
+  <!-- 01 VISÃO GERAL -->
+  <section id="sec-01">
     <p class="section-label">Seção 01</p>
-    <h2><span class="num">01</span>Princípios da Squad</h2>
-    <p class="lead">As bases que não se discutem — em duas partes: os princípios e, na sequência, como o prazo se planeja e se entrega. Toque em cada tema para abrir os detalhes.</p>
+    <h2><span class="num">01</span>Visão Geral do Módulo Reuniões</h2>
+    <p class="lead">O módulo <strong>Reuniões (Meetings)</strong> do Zoho Sprints é o ambiente centralizado para agendar, governar e documentar todas as cerimônias e encontros do time ágil — com data, hora, duração, recorrência, participantes e lembrete automático, sempre vinculado a um <strong>Sprint específico</strong>.</p>
+
+    <h3 class="subhead">Cerimônias ágeis (tipos suportados)</h3>
+    <div class="table-wrap">
+      <table class="dtable">
+        <thead>
+          <tr><th>Tipo de reunião</th><th>Identificador</th><th>Objetivo central</th><th>Frequência recomendada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Review</strong></td><td><span class="badge">Review</span></td><td>Trazer novas ideias, opiniões e melhorias ao processo — não entra na daily nem na planning.</td><td>A cada ~60 dias, ao fim de uma entrega macro</td></tr>
+          <tr><td><strong>Showcase</strong></td><td><span class="badge">Showcase</span></td><td>Apresentação prática dos avanços para o negócio, em alto nível executivo.</td><td>Semanal ou quinzenal</td></tr>
+          <tr><td><strong>Planning</strong></td><td><span class="badge">Planning</span></td><td>Divisão das tarefas da sprint entre as pessoas do squad, já com as horas estimadas.</td><td>Início de cada Sprint</td></tr>
+          <tr><td><strong>Refinamento</strong></td><td><span class="badge">Refinamento</span></td><td>Preparação dos cards da próxima sprint: estimativa de horas e histórias de usuário escritas.</td><td>Antes de cada Sprint (semanal)</td></tr>
+          <tr><td><strong>Daily - Cliente</strong></td><td><span class="badge">Daily · Cliente</span></td><td>Sincronização diária com o cliente: pendências e bloqueios do lado dele.</td><td>Diária (dias úteis)</td></tr>
+          <tr><td><strong>Daily - Be Solution</strong></td><td><span class="badge">Daily · BS</span></td><td>Sincronização diária interna do squad: o que foi feito, o que será feito e impedimentos.</td><td>Diária (dias úteis)</td></tr>
+          <tr><td><strong>Demais não recorrentes - Be Solution</strong></td><td><span class="badge">Avulsa · BS</span></td><td>Alinhamentos internos ad-hoc: workshops técnicos, 1-on-1s e sessões de arquitetura.</td><td>Sob demanda</td></tr>
+          <tr><td><strong>Demais não recorrentes - Cliente</strong></td><td><span class="badge">Avulsa · Cliente</span></td><td>Alinhamentos pontuais com o cliente, fora do ciclo padrão de cerimônias.</td><td>Sob demanda</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip"><span class="callout-label">ℹ Governança integrada</span>O módulo de <strong>Reuniões opera de forma nativa no Zoho Sprints</strong> para centralizar o planejamento, controle e registro formal de todas as cerimônias do ciclo ágil diretamente no contexto do projeto.</div>
+
+    <div class="produto">
+      <span class="callout-label">★ Benefícios corporativos para o squad</span>
+      <ul style="margin:8px 0 0 18px">
+        <li><strong>Centralização e alinhamento do squad:</strong> agendamento e registro de todas as cerimônias em um só lugar, com horários visíveis para todos.</li>
+        <li><strong>Alinhamento ao ciclo iterativo:</strong> reforça o ritmo do Scrum ao relacionar cada compromisso com a meta do Sprint vigente.</li>
+        <li><strong>Lembretes automáticos:</strong> diminuição drástica de ausências através de e-mails disparados antes do início.</li>
+        <li><strong>Histórico permanente:</strong> registro seguro de pautas, atas e deliberações consultáveis a qualquer momento.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 02 CRIAR REUNIÃO -->
+  <section id="sec-02">
+    <p class="section-label">Seção 02</p>
+    <h2><span class="num">02</span>Como criar uma reunião</h2>
+    <p class="lead">A criação de uma reunião funciona como o registro e agendamento formal do encontro da equipe.</p>
+
+    <div class="chain" aria-label="Fluxo resumido de criação">
+      <span class="chain-step">1. Abrir o Projeto</span><span class="chain-arrow">→</span>
+      <span class="chain-step">2. Módulo Reuniões</span><span class="chain-arrow">→</span>
+      <span class="chain-step">3. Botão Schedule</span><span class="chain-arrow">→</span>
+      <span class="chain-step">4. Preencher formulário</span><span class="chain-arrow">→</span>
+      <span class="chain-step">5. Clicar em Schedule</span><span class="chain-arrow">→</span>
+      <span class="chain-step">6. Listada em Scheduled Meetings</span>
+    </div>
+
+    <h3 class="subhead">Passo a passo para registrar uma reunião</h3>
+    <ol class="steps">
+      <li><p><strong>Abra o projeto desejado</strong> no Zoho Sprints através do seletor superior de workspaces.</p></li>
+      <li><p>No menu de navegação lateral esquerdo, clique em <span class="ui">Reuniões (Meetings)</span>.</p></li>
+      <li><p>No canto superior direito, clique no botão <span class="ui">Schedule</span> para abrir o formulário de registro.</p></li>
+      <li><p>Informe o <strong>Meeting Title</strong> de maneira descritiva. Ex.: <em>"Planning Sprint 12 — Squad Be Solution"</em>.</p></li>
+      <li><p>Defina com exatidão a <strong>Data de início</strong> e a <strong>Hora</strong> nos seletores do formulário.</p></li>
+      <li><p>Configure a <strong>Duração</strong> esperada para o encontro (ex.: 15m, 30m, 1h ou 2h).</p></li>
+      <li><p>Selecione os <strong>Participantes</strong> obrigatórios e opcionais na lista de membros do projeto.</p></li>
+      <li><p>Ajuste o <strong>Tipo de Recorrência</strong> (Não se repete, Diária, Semanal etc.) e o <strong>Número de Recorrências</strong>.</p></li>
+      <li><p>Escolha o <strong>Tipo de Reunião</strong> correspondente à cerimônia do squad: <strong>Review, Showcase, Planning, Refinamento, Daily - Cliente, Daily - Be Solution, Demais não recorrentes - Be Solution</strong> ou <strong>Demais não recorrentes - Cliente</strong>.</p></li>
+      <li><p>Configure o campo <strong>Remind Before</strong>, definindo o tempo prévio de notificação (ex.: 10 ou 15 minutos).</p></li>
+      <li><p>Descreva detalhadamente a <strong>Pauta / Agenda</strong> com os tópicos e objetivos do encontro.</p></li>
+      <li><p>Finalize clicando em <span class="ui">Schedule</span>. A reunião aparece imediatamente em <strong>Scheduled Meetings</strong>.</p></li>
+    </ol>
+  </section>
+
+  <!-- 03 RECORRENTES -->
+  <section id="sec-03">
+    <p class="section-label">Seção 03</p>
+    <h2><span class="num">03</span>Reuniões recorrentes</h2>
+    <p class="lead">A maturidade de um squad ágil está no cumprimento disciplinado de seus ritos cadenciados. O Zoho Sprints automatiza o ciclo de vida dos encontros repetidos, sem recriar convites manualmente a cada iteração.</p>
 
     <details class="acc" open>
       <summary>
-        <span class="acc-num">1.1</span>
-        <span><span class="acc-title">Quem decide o quê</span><span class="acc-sub">O negócio dá o destino; a forma é nossa</span></span>
+        <span class="acc-num">3.1</span>
+        <span><span class="acc-title">Parâmetros de recorrência</span><span class="acc-sub">Campo Recurrence Type</span></span>
+        <span class="acc-caret" aria-hidden="true"></span>
+      </summary>
+      <div class="acc-body">
+        <ul>
+          <li><strong>Não se repete (None):</strong> indicada para <strong>Demais não recorrentes - Be Solution</strong> e <strong>Demais não recorrentes - Cliente</strong> — alinhamentos pontuais e dinâmicas especiais.</li>
+          <li><strong>Diária (Daily):</strong> indicada para <strong>Daily - Be Solution</strong> e <strong>Daily - Cliente</strong> — permite configurar o total de ocorrências (ex.: 10 dias úteis para uma sprint de duas semanas).</li>
+          <li><strong>Semanal (Weekly):</strong> indicada para <strong>Refinamento</strong> e <strong>Showcase</strong>.</li>
+          <li><strong>Quinzenal / Mensal:</strong> indicada para <strong>Planning</strong> (início de cada sprint) e <strong>Review</strong> (a cada entrega macro, ~60 dias).</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary>
+        <span class="acc-num">3.2</span>
+        <span><span class="acc-title">Exemplo prático — as duas Dailies</span><span class="acc-sub">Configuração completa de referência</span></span>
         <span class="acc-caret" aria-hidden="true"></span>
       </summary>
       <div class="acc-body">
         <div class="duo">
           <div class="duo-card">
-            <span class="who">O quê</span>
-            <h4>O negócio</h4>
-            <p>Isso nós entendemos.</p>
+            <span class="who">Interna</span>
+            <h4>Daily - Be Solution</h4>
+            <ul>
+              <li><strong>Título:</strong> Daily Be Solution — Squad</li>
+              <li><strong>Horário:</strong> 09:30 às 09:45 (15 min)</li>
+              <li><strong>Recorrência:</strong> Diária · 10 ocorrências</li>
+              <li><strong>Lembrete:</strong> 10 min antes (09:20)</li>
+              <li><strong>Pauta:</strong> 1) O que fiz ontem? 2) O que farei hoje? 3) Tenho impedimento?</li>
+            </ul>
           </div>
           <span class="x" aria-hidden="true">×</span>
           <div class="duo-card">
-            <span class="who">O como</span>
-            <h4>A forma de fazer</h4>
-            <p>É conosco — e com o Google.</p>
+            <span class="who">Com o cliente</span>
+            <h4>Daily - Cliente</h4>
+            <ul>
+              <li><strong>Título:</strong> Daily Cliente — Squad Be Solution</li>
+              <li><strong>Horário:</strong> 10:00 às 10:15 (15 min)</li>
+              <li><strong>Recorrência:</strong> Diária · 10 ocorrências</li>
+              <li><strong>Lembrete:</strong> 10 min antes (09:50)</li>
+              <li><strong>Pauta:</strong> pendências do lado do cliente e bloqueios que dependem dele</li>
+            </ul>
           </div>
         </div>
-        <p>É <strong>nossa obrigação sinalizar ao Google</strong> quando o cliente insistir em uma forma que prejudique a qualidade e a excelência da entrega.</p>
-      </div>
-    </details>
-
-    <details class="acc" open>
-      <summary>
-        <span class="acc-num">1.2</span>
-        <span><span class="acc-title">Prazo &amp; execução</span><span class="acc-sub">Como se planeja e se entrega</span></span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <div class="produto"><strong>Princípio 00 —</strong> quem dá o prazo <strong>é o negócio</strong>. O prazo nasce da demanda do cliente. O técnico diz as horas necessárias — validadas com o tech lead —, mas <strong>não escolhe o quando</strong> da entrega.</div>
-        <p>O <strong>negócio dá o prazo</strong>; o <strong>técnico (dev) dá as horas</strong>. A partir da data do cliente, o prazo é calculado de trás pra frente.</p>
-
-        <p class="flow-note">← calcula nesta direção (de trás pra frente)</p>
-        <div class="flow">
-          <div class="flow-card">
-            <span class="step-tag">3 · sobra para o dev</span>
-            <h4>Desenvolvimento</h4>
-            <p>O tempo restante. Somando as horas de todos os cards, descobrimos quantas pessoas/horas por semana são necessárias.</p>
-          </div>
-          <div class="flow-card">
-            <span class="step-tag">2 · reserva</span>
-            <h4>Teste</h4>
-            <p>Quanto tempo de teste o entregável exige (ex.: uma semana / 10 dias).</p>
-          </div>
-          <div class="flow-card">
-            <span class="step-tag">1 · ponto de partida</span>
-            <h4>Data do cliente</h4>
-            <p>Ex.: "preciso disso até 30/06." Daí desconta-se tudo para trás.</p>
-          </div>
-        </div>
-
-        <p><strong>Capacidade real:</strong> some as horas que os técnicos lançaram nos cards e compare com a capacidade da equipe full-time. <strong>Heads ou tech leads técnicos</strong> (de IA, Eng. de Dados, Software, Arquitetura) — ou indicados por eles — validam se as horas batem mesmo.</p>
-
-        <p><strong>Quando não bate → escala.</strong> Na semana, precisa de 300h e o time entrega 200h? A squad <strong>não decide</strong> sozinha. O GP comunica e leva a decisão (mais gente, cortar escopo ou avisar atraso) para quem tem visão de recurso.</p>
-        <div class="stats">
-          <div class="stat"><div class="n">300h</div><div class="l">Necessárias (semana)</div></div>
-          <div class="stat"><div class="n">200h</div><div class="l">Capacidade (semana)</div></div>
-          <div class="stat alert"><div class="n">−100h</div><div class="l">Faltam 100h → o GP escala a decisão</div></div>
-        </div>
-
-        <p><strong>Organização dos cards:</strong> cards em <strong>ordem de execução</strong> e <strong>numerados</strong>. Assim, quando o nº 1 atrasa, enxerga-se na hora o que depende dele.</p>
-        <div class="seq" aria-label="Exemplo de cards numerados em ordem de execução">
-          <div class="seq-card"><div class="n">1</div><div class="h">~16h</div></div>
-          <span class="seq-arrow" aria-hidden="true">→</span>
-          <div class="seq-card"><div class="n">2</div><div class="h">depende do 1</div></div>
-          <span class="seq-arrow" aria-hidden="true">→</span>
-          <div class="seq-card"><div class="n">3</div><div class="h">~24h</div></div>
-          <span class="seq-arrow" aria-hidden="true">→</span>
-          <div class="seq-card"><div class="n">4</div><div class="h">~8h</div></div>
-        </div>
+        <div class="tip"><span class="callout-label">⚡ Ao iniciar um novo Sprint</span>No momento em que um novo Sprint é ativado, agende <strong>todas as cerimônias de uma só vez</strong> — incluindo as duas Dailies — para garantir bloqueio prévio nas agendas de todo o time e do cliente.</div>
       </div>
     </details>
   </section>
 
-  <!-- 02 RITOS -->
-  <section id="ritos">
-    <p class="section-label">Seção 02</p>
-    <h2><span class="num">02</span>Os ritos</h2>
-    <p class="lead">As 5 cerimônias — cada uma com <strong>um único produto</strong> e um tempo definido. Entrar sem o insumo da etapa anterior é não ter feito o dever de casa.</p>
-
-    <div class="rites">
-      <div class="rite"><div class="n">1</div><h4>Refinamento</h4><div class="t">até 1h</div></div>
-      <div class="rite"><div class="n">2</div><h4>Planning</h4><div class="t">40 min</div></div>
-      <div class="rite"><div class="n">3</div><h4>Daily</h4><div class="t">15 min</div></div>
-      <div class="rite"><div class="n">4</div><h4>Showcase</h4><div class="t">40 min · exec.</div></div>
-      <div class="rite"><div class="n">5</div><h4>Review</h4><div class="t">até 30 min</div></div>
-    </div>
-
-    <details class="acc">
-      <summary>
-        <span class="acc-num">1</span>
-        <span><span class="acc-title">Refinamento</span><span class="acc-sub">Antes da sprint</span></span>
-        <span class="badge">até 1h</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <div class="produto"><strong>Produto da cerimônia:</strong> cards da próxima sprint com estimativa de horas — e as histórias de usuário escritas.</div>
-        <ul>
-          <li>Só os cards que entram na <strong>próxima sprint</strong> — não o projeto inteiro.</li>
-          <li>O <strong>analista de requisitos</strong> escreve as histórias de usuário — elas precisam estar prontas até o fim do refinamento.</li>
-          <li>O técnico estima as horas <strong>sem</strong> saber quem vai executar.</li>
-          <li>Faltou requisito? Vira apontamento de tarefa.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span class="acc-num">2</span>
-        <span><span class="acc-title">Planning</span><span class="acc-sub">Início do squad</span></span>
-        <span class="badge">40 min — nem mais</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <div class="produto"><strong>Produto da cerimônia:</strong> a divisão das tarefas entre as pessoas.</div>
-        <ul>
-          <li>As horas já devem estar nos cards do <span class="ui">Zoho</span> — quem chega sem elas não cumpriu o refinamento.</li>
-          <li>As <strong>histórias de usuário já devem estar escritas</strong> — a planning não é o momento de redigi-las.</li>
-          <li>Negócio estudou, técnico estimou, GP entendeu o contexto.</li>
-          <li>Sair com cada card atribuído a uma pessoa.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span class="acc-num">3</span>
-        <span><span class="acc-title">Daily</span><span class="acc-sub">Todo dia</span></span>
-        <span class="badge">15 min — não 1 hora</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <div class="produto"><strong>Produto da cerimônia:</strong> encaminhar impedimentos. Só isso.</div>
-        <ul>
-          <li>Não se resolve problema na daily — <strong>encaminha-se</strong>.</li>
-          <li>Quem está impedido + quem resolve → marca-se um horário à parte.</li>
-          <li><strong>Ideia nova ou opinião? Não</strong> — isso vai para uma review ao final de cada entrega macro ou versão.</li>
-        </ul>
-        <div class="tip"><strong>O que é impedimento:</strong> tudo que impacta o prazo combinado — não só o que para o projeto. Mesmo que o trabalho continue, se há risco de mudar a data, declara-se impedimento — inclusive pendências do lado do cliente. Se a gente não bater, ele não faz; e uma hora trava. Sinaliza-se quietinho, antes de travar.</div>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span class="acc-num">4</span>
-        <span><span class="acc-title">Showcase</span><span class="acc-sub">Semanal ou quinzenal</span></span>
-        <span class="badge">40 min — executiva</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <div class="produto"><strong>Produto da cerimônia:</strong> apresentação dos avanços para o negócio.</div>
-        <ul>
-          <li>Apresentação <strong>prática</strong> dos avanços + um resumo breve do andamento da semana.</li>
-          <li>Falar em alto nível de negócios — não no detalhe técnico.</li>
-          <li>Convidar os executivos que não estão no dia a dia.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span class="acc-num">5</span>
-        <span><span class="acc-title">Review</span><span class="acc-sub">A cada ~60 dias · ao fim de uma entrega macro</span></span>
-        <span class="badge">até 30 min</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <div class="produto"><strong>Produto da cerimônia:</strong> é a hora de trazer novas ideias.</div>
-        <ul>
-          <li>O momento certo para <strong>novas ideias</strong>, opiniões e melhorias — é aqui, e não na daily, na planning ou demais agendas, que elas entram.</li>
-          <li>Dura <strong>no máximo 30 min</strong>.</li>
-          <li>Estimativa de cadência: <strong>a cada ~60 dias</strong>, marcada ao fechar uma entrega macro ou versão.</li>
-        </ul>
-      </div>
-    </details>
-  </section>
-
-  <!-- 03 PAPÉIS -->
-  <section id="papeis">
-    <p class="section-label">Seção 03</p>
-    <h2><span class="num">03</span>Os papéis</h2>
-    <p class="lead">Quem faz o quê — e todos servem ao ritmo. Todos os papéis existem para uma coisa: <strong>manter o ritmo</strong>. Cada um sustenta uma parte da máquina.</p>
-    <blockquote>Quem controla o tema e a agenda controla a negociação — e tem poder sobre ela. O poder da squad é o poder de manter o ritmo — e ele é do GP.</blockquote>
-    <p class="lead"><strong>O GP e o SM são os guardiões do método.</strong> Sugestões de melhoria são bem-vindas — improviso fora da regra, não. <a href="https://docs.google.com/document/d/11jMAa5TjkMeODCt7j2_kuxznIsDaEZrN/edit" target="_blank" rel="noopener">Mais informações — documento completo dos papéis</a>.</p>
-
-    <details class="acc">
-      <summary>
-        <span><span class="acc-title">GP — Gerente de Projeto</span><span class="acc-sub">Guardião do Método</span></span>
-        <span class="role-star">★ Guardião do Método</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <p>Tem o <strong>poder da agenda</strong>: comanda a pauta e dá ritmo às cerimônias. Poder para <strong>fazer a regra valer</strong>, não para inovar à vontade.</p>
-        <p><strong>Função-chave:</strong> além do micro (o card, a hora), olhar o macro e fazer a ponte entre o prazo do cliente e a execução do time.</p>
-        <ul>
-          <li>Comandar a pauta e manter ritmo, tópicos e tempo de cada agenda.</li>
-          <li>Cobrar e escalar: horas nos cards, documentação, pendências.</li>
-          <li>Saber <strong>defender a entrega perante o cliente</strong>.</li>
-          <li>Quem comanda a pauta na squad é o GP — mesmo que um cliente participe, ele vira membro do squad.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span><span class="acc-title">Scrum Master</span><span class="acc-sub">Assessora o GP · focado nos ritos</span></span>
-        <span class="role-star">★ Guardião do Método</span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <p>Assessora o GP, <strong>focado nos ritos</strong>. Garante que as cerimônias aconteçam no formato e no tempo certos.</p>
-        <ul>
-          <li>Zelar pelo formato e pela duração de cada rito.</li>
-          <li>Apoiar o GP na condução das agendas.</li>
-          <li>Tirar atrito do processo para o ritmo não cair.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span><span class="acc-title">PO — Product Owner</span><span class="acc-sub">O cliente dentro do time</span></span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <p>Apropria-se do negócio a ponto de ser <strong>um cliente dentro do nosso time</strong>. Funciona como o filtro do produto antes do cliente real.</p>
-        <ul>
-          <li>Ajudar o time a entender os contextos.</li>
-          <li>Ajudar a desenhar os fluxos e as rotas — <strong>não apenas o caminho feliz da API</strong>.</li>
-          <li>Funcionar como filtro antes do cliente, sempre olhando para o produto.</li>
-          <li>Saber <strong>defender a entrega perante o cliente</strong>.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span><span class="acc-title">Analista de Negócios</span><span class="acc-sub">Entende o negócio e traduz para o técnico</span></span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <p><strong>Entende o negócio a fundo.</strong> Conversa com o cliente em linguagem de negócios e <strong>traduz para o time em linguagem técnica</strong> — é a ponte entre os dois mundos.</p>
-        <ul>
-          <li>Entender o negócio e o contexto do cliente.</li>
-          <li>Comunicar-se com o cliente em <strong>linguagem de negócios</strong>.</li>
-          <li>Traduzir a demanda para o time em <strong>linguagem técnica</strong>.</li>
-          <li><strong>Escrever as histórias de usuário</strong> — prontas até o refinamento.</li>
-        </ul>
-        <p style="margin-top:12px"><strong>Entrega o tripé:</strong></p>
-        <div class="tripe">
-          <div><strong>Protótipo</strong><span>só a visão</span></div>
-          <div><strong>Fluxo</strong><span>o caminho inteiro do app, não só o feliz</span></div>
-          <div><strong>Requisito</strong><span>o que falta para estimar</span></div>
-        </div>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span><span class="acc-title">Técnico</span><span class="acc-sub">IA · Eng. de Dados · Arquiteto · Dev Back e Front</span></span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <p>Estima e <strong>executa perseguindo os prazos</strong>.</p>
-        <ul>
-          <li>Estimar as horas da próxima sprint até quinta (ou no refinamento de sexta), já nos cards do <span class="ui">Zoho</span>.</li>
-          <li>Preencher diariamente nos cards as horas das atividades executadas.</li>
-          <li>Executar perseguindo os prazos combinados.</li>
-          <li>Avisar sobre impedimentos.</li>
-          <li>Cobrar dos analistas de negócios as informações necessárias ao desenvolvimento.</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="acc">
-      <summary>
-        <span><span class="acc-title">QA — Qualidade</span><span class="acc-sub">Garante a qualidade da entrega</span></span>
-        <span class="acc-caret" aria-hidden="true"></span>
-      </summary>
-      <div class="acc-body">
-        <p>Responsável por <strong>provar que a entrega funciona</strong> antes de ela chegar ao cliente.</p>
-        <ul>
-          <li>Fazer o plano de teste.</li>
-          <li>Executar os testes necessários.</li>
-        </ul>
-      </div>
-    </details>
-  </section>
-
-  <!-- 04 HORAS ADICIONAIS -->
-  <section id="horas">
+  <!-- 04 LEMBRETES -->
+  <section id="sec-04">
     <p class="section-label">Seção 04</p>
-    <h2><span class="num">04</span>Horas adicionais</h2>
-    <p class="lead">Horas além do previsto só entram com <strong>rastro no Zoho</strong> e <strong>autorização do head da área — antes e depois</strong>.</p>
+    <h2><span class="num">04</span>Lembretes e notificações por e-mail</h2>
+    <p class="lead">O Zoho Sprints possui um motor de disparos automáticos que envia e-mails e notificações no sistema para assegurar transparência operacional e pontualidade.</p>
 
-    <div class="flow" style="margin-top:24px">
-      <div class="flow-card">
-        <span class="step-tag">Requisito</span>
-        <h4>Zoho atualizado</h4>
-        <p>Os cards com as horas executadas já lançadas — é o registro que sustenta as duas autorizações.</p>
-      </div>
-      <div class="flow-card">
-        <span class="step-tag">Antes · autorização prévia</span>
-        <h4>Head aprova a estimativa</h4>
-        <p>O head da área aprova com a estimativa de horas e as tarefas que serão executadas. Sem esse aval, as horas extras não começam.</p>
-      </div>
-      <div class="flow-card">
-        <span class="step-tag">Depois · autorização posterior</span>
-        <h4>Head confere a entrega</h4>
-        <p>O head confere se as horas batem com as atividades entregues. É a validação final do que foi lançado.</p>
-      </div>
+    <div class="table-wrap">
+      <table class="dtable">
+        <thead>
+          <tr><th>Gatilho do e-mail</th><th>Conteúdo notificado</th><th>Destinatários</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1. SCHEDULED</strong><br><span style="font-size:.8rem">(Agendada)</span></td><td>Disparado no instante da confirmação do agendamento. Traz título, data, hora, duração, local e pauta completa.</td><td>Todos os participantes selecionados</td></tr>
+          <tr><td><strong>2. REMINDER</strong><br><span style="font-size:.8rem">(Lembrete)</span></td><td>Calculado com base em <strong>Remind Before</strong> e na recorrência. Disparado no intervalo configurado antes do início.</td><td>Participantes confirmados na série</td></tr>
+          <tr><td><strong>3. RESCHEDULED</strong><br><span style="font-size:.8rem">(Reagendada)</span></td><td>Enviado quando um Admin ou Manager altera data, hora, duração ou pauta, sinalizando as alterações.</td><td>Todos os participantes da reunião</td></tr>
+        </tbody>
+      </table>
     </div>
+
+    <div class="tip"><span class="callout-label">🎯 Regra de ouro para lembretes</span>Sempre defina o campo <strong>Remind Before para 10 a 15 minutos</strong>. Lembretes com mais de 1 hora caem no esquecimento; avisos com menos de 5 minutos não dão tempo hábil para o participante encerrar a tarefa ou salvar commits.</div>
   </section>
 
-  <!-- 05 FERRAMENTAS -->
-  <section id="ferramentas">
+  <!-- 05 ACOMPANHAMENTO -->
+  <section id="sec-05">
     <p class="section-label">Seção 05</p>
-    <h2><span class="num">05</span>Ferramentas</h2>
-    <p class="lead">Vibecoding, licenças e governança. O uso de <strong>vibecoding (VB)</strong> está sendo estruturado. As regras abaixo valem para todos os técnicos.</p>
+    <h2><span class="num">05</span>Acompanhamento e gestão de status</h2>
+    <p class="lead">O acompanhamento no módulo Reuniões organiza-se visualmente para dar clareza instantânea ao Scrum Master e às lideranças técnicas.</p>
 
-    <div class="rules">
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p>Cada técnico receberá uma <strong>licença individual</strong> da ferramenta de vibecoding.</p></div>
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p>A ferramenta só pode ser usada para <strong>trabalhos da Be Solution</strong>, seguindo as regras e a governança de VB determinadas pela empresa.</p></div>
-      <div class="rule no"><span class="mark" aria-hidden="true">✕</span><p>Atividades acadêmicas, pessoais ou de outros projetos <strong>não são permitidas</strong> na ferramenta.</p></div>
+    <h3 class="subhead">Modos de visualização</h3>
+    <div class="duo">
+      <div class="duo-card">
+        <span class="who">Grid View</span>
+        <h4>Modo cards</h4>
+        <p>Cada reunião em um card modular com contagem regressiva, participantes com avatars, badge do tipo e dados do rito.</p>
+      </div>
+      <span class="x" aria-hidden="true">×</span>
+      <div class="duo-card">
+        <span class="who">List View</span>
+        <h4>Modo tabela</h4>
+        <p>Visão tabular com filtros avançados — ideal para conferir rapidamente múltiplos compromissos em projetos complexos.</p>
+      </div>
     </div>
 
-    <div class="tip" style="margin-top:20px"><strong>A regra do artigo de opinião:</strong> o técnico tem a obrigação de <strong>entender estruturalmente o que foi entregue</strong> e saber explicá-lo tecnicamente. Você não escreveu tudo, mas "assinou" — portanto é o responsável pelo conteúdo.</div>
+    <h3 class="subhead">As três abas do ciclo de vida</h3>
+    <div class="flow">
+      <div class="flow-card">
+        <span class="step-tag">1 · aguardando</span>
+        <h4>Scheduled</h4>
+        <p>Reuniões com data e hora futuras. Ação: conferir pauta prévia e presenças confirmadas.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-tag">2 · em andamento</span>
+        <h4>Ongoing</h4>
+        <p>Atingiu a hora agendada e está ativa. Ação: conduzir a reunião e registrar deliberações e atas.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-tag">3 · finalizada</span>
+        <h4>Completed</h4>
+        <p>Encontro passado, finalizado pelo moderador. Ação: revisar notas e extrair itens para o backlog.</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">Página de detalhes da reunião</h3>
+    <p class="lead" style="margin-bottom:8px">Na barra lateral direita, duas ações centrais:</p>
+    <ul style="margin:0 0 0 20px;color:var(--ink-soft);font-size:.95rem">
+      <li style="margin-bottom:6px"><strong>Botão Add (+):</strong> anexar complementos de pauta em tempo real e registrar comentários durante ou após a chamada.</li>
+      <li><strong>Botão Delete:</strong> permite ao Admin ou Manager remover o registro caso tenha sido cancelado.</li>
+    </ul>
+
+    <div class="produto"><span class="callout-label">★ Produto da cerimônia: memória técnica</span>Estimule os desenvolvedores a usar os <strong>Comentários da reunião</strong> para postar links de pull requests, decisões de arquitetura e design. Isso transforma a aba <strong>Completed</strong> em um histórico valioso para a Review.</div>
   </section>
 
-  <!-- 06 REGRA DE OURO -->
-  <section id="regra-ouro">
+  <!-- 06 EDITAR E EXCLUIR -->
+  <section id="sec-06">
     <p class="section-label">Seção 06</p>
-    <h2><span class="num">06</span>A regra de ouro</h2>
-    <p class="lead">Como decidir na hora. Antes de perguntar qualquer coisa, descubra de que lado você está: <strong>está previsto na regra?</strong></p>
+    <h2><span class="num">06</span>Editar e excluir reuniões</h2>
 
-    <div class="rules">
-      <div class="rule ok">
-        <span class="mark" aria-hidden="true">✓</span>
-        <div>
-          <h3>SIM — dentro da regra</h3>
-          <p><strong>Não precisa perguntar a ninguém.</strong> A única pergunta válida é:</p>
-          <span class="q">» "Por que você ainda não fez?"</span>
-        </div>
-      </div>
-      <div class="rule no">
-        <span class="mark" aria-hidden="true">✕</span>
-        <div>
-          <h3>NÃO — fora da regra · exceção</h3>
-          <p><strong>Escala. Sempre.</strong> Não está previsto? Não é decisão da squad.</p>
-          <span class="q">» leva para heads ou diretoria</span>
-        </div>
-      </div>
+    <h3 class="subhead">Como editar ou reagendar</h3>
+    <ol class="steps">
+      <li><p>Localize a reunião na aba <strong>Scheduled Meetings</strong> usando a pesquisa ou a listagem.</p></li>
+      <li><p>Clique sobre o card ou abra o menu de opções contextuais (ícone de três pontos / lápis de edição).</p></li>
+      <li><p>Altere o parâmetro necessário: <strong>Título, Data, Hora, Duração, Participantes, Recorrência, Tipo ou Pauta</strong>.</p></li>
+      <li><p>Clique em <span class="ui">Update / Save</span>. O Zoho Sprints recalcula os agendamentos e envia o e-mail <strong>RESCHEDULED</strong> aos envolvidos.</p></li>
+    </ol>
+
+    <h3 class="subhead">Como excluir reuniões</h3>
+    <p class="lead" style="margin-bottom:4px">Reservado exclusivamente aos perfis <strong>Admin</strong> e <strong>Manager</strong>:</p>
+    <ol class="steps">
+      <li><p>Abra a página de detalhes da reunião que deseja remover.</p></li>
+      <li><p>Na barra lateral de ferramentas à direita, clique no ícone da <strong>Lixeira (Delete)</strong>.</p></li>
+      <li><p>Confirme o modal de segurança exibido pelo sistema.</p></li>
+    </ol>
+
+    <div class="callout-alert"><span class="callout-label">⚠ Atenção crítica em séries recorrentes</span>Ao excluir uma reunião <strong>recorrente (série)</strong>, confirme no prompt se deseja excluir <strong>apenas a ocorrência selecionada</strong> (ex.: a daily de uma data que caiu em feriado) ou <strong>toda a série</strong>. Excluir a série inteira apaga as instâncias futuras irrevocavelmente.</div>
+  </section>
+
+  <!-- 07 DICAS PRÁTICAS -->
+  <section id="sec-07">
+    <p class="section-label">Seção 07</p>
+    <h2><span class="num">07</span>Dicas práticas de uso no dia a dia</h2>
+    <p class="lead">Diretrizes de governança adotadas pelos squads de alta performance na Be Solution.</p>
+
+    <div class="callout-alert"><span class="callout-label">⛔ Regra fundamental de eficiência</span><strong>Reunião sem pauta é reunião improdutiva.</strong> Nunca agende um encontro sem preencher o campo <strong>Agenda</strong>. Todo convite deve explicitar o problema a resolver, a documentação prévia a ler e o entregável esperado ao término.</div>
+
+    <div class="table-wrap">
+      <table class="dtable">
+        <thead>
+          <tr><th>Cerimônia</th><th>Timebox recomendado</th><th>Produto esperado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Review</strong></td><td>Até 30 minutos</td><td>Lista de 2 a 3 ações práticas de melhoria, cadastradas como tarefas para o ciclo seguinte.</td></tr>
+          <tr><td><strong>Showcase</strong></td><td>40 minutos (executiva)</td><td>Apresentação prática dos avanços ao negócio, em alto nível, para executivos fora do dia a dia.</td></tr>
+          <tr><td><strong>Planning</strong></td><td>Até 40 minutos</td><td>Divisão das tarefas da sprint entre as pessoas, já com as horas estimadas no Zoho.</td></tr>
+          <tr><td><strong>Refinamento</strong></td><td>Até 1 hora</td><td>Cards da próxima sprint com estimativa de horas e histórias de usuário escritas.</td></tr>
+          <tr><td><strong>Daily - Cliente</strong></td><td>Rigorosos 15 minutos</td><td>Alinhamento de pendências do lado do cliente e bloqueios que dependem dele.</td></tr>
+          <tr><td><strong>Daily - Be Solution</strong></td><td>Rigorosos 15 minutos</td><td>Alinhamento imediato de tarefas, impedimentos internos e responsáveis pelo desbloqueio.</td></tr>
+          <tr><td><strong>Demais não recorrentes - Be Solution</strong></td><td>Conforme a pauta</td><td>Alinhamentos internos ad-hoc: workshops técnicos, 1-on-1s e sessões de arquitetura.</td></tr>
+          <tr><td><strong>Demais não recorrentes - Cliente</strong></td><td>Conforme a pauta</td><td>Alinhamentos pontuais com o cliente, fora do ciclo padrão de cerimônias.</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="support">
-      <h3>Antes de cada ação, pergunte-se:</h3>
-      <p class="mono">"Isso faz a Be Solution entregar mais rápido e com mais qualidade?"</p>
+    <h3 class="subhead">Boas práticas de governança</h3>
+    <div class="rules">
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Vínculo obrigatório com o Sprint:</strong> selecione sempre o Sprint ativo — isso relaciona reuniões ao custo e à velocidade da entrega nos relatórios gerenciais.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Participantes essenciais:</strong> convide só quem precisa decidir ou executar; quem só precisa de ciência é informado via ata nos comentários.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Auditoria semanal na aba Completed:</strong> reserve 10 minutos na sexta para o Scrum Master repassar os comentários das reuniões concluídas e garantir que nada ficou sem encaminhamento.</p></div>
     </div>
   </section>
 </main>

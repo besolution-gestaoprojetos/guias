@@ -175,6 +175,10 @@
   .rhythm-icon span:nth-child(2){height:22px;background:var(--manila-deep)}
   .rhythm-icon span:nth-child(3){height:15px}
   .rhythm-icon span:nth-child(4){height:19px}
+  /* calendário ícone (reuniões) */
+  .cal-icon{width:26px;height:24px;background:var(--manila);border-radius:4px;position:relative}
+  .cal-icon::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--manila-deep);border-radius:4px 4px 0 0}
+  .cal-icon::after{content:"";position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--paper);border-radius:50%}
 
   .note{
     margin-top:36px;
@@ -235,6 +239,17 @@
       </div>
       <span class="guide-cta">Abrir o manual</span>
     </a>
+
+    <a class="guide-card" href="guia-reunioes-zoho.html">
+      <div class="guide-icon"><span class="cal-icon" aria-hidden="true"></span></div>
+      <p class="guide-tag">Zoho Sprints</p>
+      <h2>Reuniões no Zoho Sprints</h2>
+      <p>Como agendar, parametrizar e acompanhar as cerimônias Scrum no módulo Reuniões: recorrência, lembretes automáticos, status e boas práticas de governança.</p>
+      <div class="guide-topics">
+        <span>Passo a passo</span><span>Recorrência</span><span>Lembretes</span><span>Boas práticas</span>
+      </div>
+      <span class="guide-cta">Abrir o guia</span>
+    </a>
   </div>
 
   <div class="note">
@@ -243,7 +258,7 @@
 </main>
 
 <footer>
-  Be Solution · Data Intelligence — guias internos · atualizado em 07/07/2026
+  Be Solution · Data Intelligence - Guia interno · atualizado em 24/09/2026
 </footer>
 
 </body>
