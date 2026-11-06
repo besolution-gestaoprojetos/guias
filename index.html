@@ -180,6 +180,12 @@
   .cal-icon::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--manila-deep);border-radius:4px 4px 0 0}
   .cal-icon::after{content:"";position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:var(--paper);border-radius:50%}
 
+  .flow-icon{display:flex;align-items:center;gap:3px;height:22px}
+  .flow-icon .dot{width:9px;height:9px;border-radius:50%;background:var(--manila-deep);flex:none}
+  .flow-icon .dot:nth-child(3){background:var(--manila)}
+  .flow-icon .dot:nth-child(5){background:var(--manila-deep)}
+  .flow-icon .bar{width:9px;height:2px;background:var(--line)}
+
   .note{
     margin-top:36px;
     background:var(--paper-dim);
@@ -240,13 +246,46 @@
       <span class="guide-cta">Abrir o manual</span>
     </a>
 
-    <a class="guide-card" href="guia-reunioes-zoho.html">
+    <a class="guide-card" href="guia-apontamento-horas.html">
       <div class="guide-icon"><span class="cal-icon" aria-hidden="true"></span></div>
       <p class="guide-tag">Zoho Sprints</p>
-      <h2>Reuniões no Zoho Sprints</h2>
-      <p>Como agendar, parametrizar e acompanhar as cerimônias Scrum no módulo Reuniões: recorrência, lembretes automáticos, status e boas práticas de governança.</p>
+      <h2>Apontamento de Horas em Projetos</h2>
+      <p>Como criar as agendas Interna e Externa de 30 dias no módulo Reuniões e apontar as horas das reuniões: recorrência, descrição obrigatória e status Faturável.</p>
       <div class="guide-topics">
         <span>Passo a passo</span><span>Recorrência</span><span>Lembretes</span><span>Boas práticas</span>
+      </div>
+      <span class="guide-cta">Abrir o guia</span>
+    </a>
+
+    <a class="guide-card" href="guia-apontamento-horas-fora-projeto.html">
+      <div class="guide-icon"><span class="cal-icon" aria-hidden="true"></span></div>
+      <p class="guide-tag">Zoho Sprints</p>
+      <h2>Apontamento de Horas Fora de Projeto</h2>
+      <p>Como criar uma agenda única por reunião no projeto Agenda - Apontamento de Horas e apontar as horas de reuniões que não são de projeto: reuniões com heads, de gestão e outras reuniões internas.</p>
+      <div class="guide-topics">
+        <span>Agenda única</span><span>Quem cria</span><span>Descrição obrigatória</span><span>Boas práticas</span>
+      </div>
+      <span class="guide-cta">Abrir o guia</span>
+    </a>
+
+    <a class="guide-card" href="guia-apontamento-horas-treinamentos.html">
+      <div class="guide-icon"><span class="cal-icon" aria-hidden="true"></span></div>
+      <p class="guide-tag">Zoho Sprints</p>
+      <h2>Apontamento de Horas de Treinamentos</h2>
+      <p>Como criar uma agenda única por treinamento no projeto Treinamentos e apontar as horas dos treinamentos ministrados por alguém da BI, como o de comunicação.</p>
+      <div class="guide-topics">
+        <span>Agenda única</span><span>Quem ministra</span><span>Descrição obrigatória</span><span>Boas práticas</span>
+      </div>
+      <span class="guide-cta">Abrir o guia</span>
+    </a>
+
+    <a class="guide-card" href="guia-fluxo-projeto.html">
+      <div class="guide-icon"><span class="flow-icon" aria-hidden="true"><span class="dot"></span><span class="bar"></span><span class="dot"></span><span class="bar"></span><span class="dot"></span></span></div>
+      <p class="guide-tag">Fluxo de Projeto</p>
+      <h2>Fluxo de Estágios do Projeto</h2>
+      <p>O status recomendado para cada etapa — de Business a Done — com regras claras de transição e como tratar os casos de impedimento (Blocked) e cancelamento (Canceled).</p>
+      <div class="guide-topics">
+        <span>Estágios</span><span>Regras de transição</span><span>Blocked &amp; Canceled</span>
       </div>
       <span class="guide-cta">Abrir o guia</span>
     </a>
@@ -258,7 +297,7 @@
 </main>
 
 <footer>
-  Be Solution · Data Intelligence - Guia interno · atualizado em 24/09/2026
+  Be Solution · Data Intelligence - Guia interno · atualizado em 30/09/2026
 </footer>
 
 </body>
