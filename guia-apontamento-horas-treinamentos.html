@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apontamento de Horas de Treinamentos — Be Solution</title>
+<title>Apontamento de Horas de Cursos / Treinamentos — Be Solution</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -484,7 +484,7 @@
       <a href="manual-squad-besolution.html">Manual da Squad</a>
       <a href="guia-apontamento-horas.html">Horas em Projetos</a>
       <a href="guia-apontamento-horas-fora-projeto.html">Horas Fora de Projeto</a>
-      <a href="guia-apontamento-horas-treinamentos.html" class="active">Horas de Treinamentos</a>
+      <a href="guia-apontamento-horas-treinamentos.html" class="active">Horas de Cursos / Treinamentos</a>
       <a href="guia-fluxo-projeto.html">Fluxo do Projeto</a>
     </nav>
   </div>
@@ -493,9 +493,9 @@
 <header>
   <div class="header-inner">
     <p class="eyebrow">Guia interno · Zoho Sprints</p>
-    <h1>Apontamento de Horas de Treinamentos</h1>
-    <div class="path-strip" aria-label="Fluxo de apontamento de treinamentos">
-      <span>Projeto Treinamentos</span><span>Uma agenda por treinamento</span><span>Tipo · Geral</span><span>Só uma vez</span><span>Log de horas</span><span>Descrição obrigatória</span><span>Faturável</span>
+    <h1>Apontamento de Horas de Cursos / Treinamentos</h1>
+    <div class="path-strip" aria-label="Fluxo de apontamento de cursos e treinamentos">
+      <span>Projeto Cursos / Treinamentos</span><span>Uma agenda por treinamento ou curso</span><span>Tipo · Geral</span><span>Só uma vez ou todos os dias</span><span>Log de horas</span><span>Descrição obrigatória</span><span>Faturável</span>
     </div>
   </div>
 </header>
@@ -504,7 +504,7 @@
   <nav class="toc" aria-label="Índice do guia">
     <a href="#sec-01">01 Visão Geral</a>
     <a href="#sec-02">02 Criar Agenda</a>
-    <a href="#sec-03">03 Agenda Única</a>
+    <a href="#sec-03">03 Recorrência</a>
     <a href="#sec-04">04 Apontamento de Horas</a>
     <a href="#sec-05">05 Lembretes</a>
     <a href="#sec-06">06 Acompanhamento</a>
@@ -521,33 +521,32 @@
   <section id="sec-01">
     <p class="section-label">Seção 01</p>
     <h2><span class="num">01</span>Visão Geral</h2>
-    <p class="lead">Os <strong>treinamentos</strong> têm um lugar próprio para o apontamento de horas. Para registrar o tempo dedicado a eles, a Be Solution tem um projeto exclusivo no Zoho Sprints: <strong>Treinamentos</strong>. Nele, cada treinamento ganha a sua própria agenda, criada <strong>uma única vez</strong>.</p>
+    <p class="lead">O projeto <strong>Cursos / Treinamentos</strong> do Zoho Sprints registra as horas dedicadas à capacitação: os <strong>treinamentos</strong> que alguém da BI ministra para os demais e as <strong>horas de cursos</strong> que a Be disponibiliza para certificações, como o <strong>Google Skills</strong>. Nele, cada treinamento ganha uma agenda criada pelo <strong>organizador</strong>, e cada pessoa cria com autonomia a agenda dos <strong>seus cursos</strong>.</p>
 
-    <div class="callout-alert"><span class="callout-label">⚠ Treinamento, projeto ou fora de projeto?</span>Este guia vale <strong>somente para treinamentos</strong>. Reuniões de um projeto vão para a <strong>Agenda Interna ou Externa do próprio projeto</strong>, conforme o guia <a href="guia-apontamento-horas.html">Apontamento de Horas em Projetos</a>. Reuniões que não estão dentro do escopo de projetos e não são treinamentos seguem o guia <a href="guia-apontamento-horas-fora-projeto.html">Apontamento de Horas Fora de Projeto</a>.</div>
+    <div class="callout-alert"><span class="callout-label">⚠ Horas de curso também contam</span>Quando você <strong>não estiver em nenhuma demanda</strong> e usar o tempo para fazer um curso — por exemplo, <strong>1 ou 2 horas</strong> estudando no Google Skills para uma certificação —, <strong>aponte essas horas aqui</strong>. A Be quer acompanhar esse tempo de estudo.</div>
 
-    <h3 class="subhead">Onde apontar cada reunião</h3>
+    <h3 class="subhead">O que apontar aqui</h3>
     <div class="table-wrap">
       <table class="dtable">
         <thead>
           <tr><th>Situação</th><th>Identificador</th><th>Exemplos</th><th>Onde apontar</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Treinamento</strong></td><td><span class="badge">Treinamento</span></td><td>Treinamentos ministrados por alguém da BI para os demais, como o treinamento de comunicação.</td><td>Projeto <strong>Treinamentos</strong> · uma agenda por treinamento</td></tr>
-          <tr><td><strong>Reunião de projeto</strong></td><td><span class="badge">Projeto</span></td><td>Daily, Planning, Refinamento, Showcase, Review e alinhamentos com o cliente do projeto.</td><td>Agenda Interna ou Externa <strong>do próprio projeto</strong></td></tr>
-          <tr><td><strong>Reunião fora de projeto</strong></td><td><span class="badge">Fora de projeto</span></td><td>Reunião com heads, reuniões de gestão e reuniões em geral sem relação com projetos.</td><td>Projeto <strong>Agenda - Apontamento de Horas</strong></td></tr>
+          <tr><td><strong>Treinamento</strong></td><td><span class="badge">Treinamento</span></td><td>Treinamentos ministrados por alguém da BI para os demais, como o treinamento de comunicação.</td><td>Projeto <strong>Cursos / Treinamentos</strong> · o organizador cria uma agenda por treinamento</td></tr>
+          <tr><td><strong>Curso</strong></td><td><span class="badge">Curso</span></td><td>Horas de cursos disponibilizados pela Be para certificações, como os do Google Skills.</td><td>Projeto <strong>Cursos / Treinamentos</strong> · a própria pessoa cria a agenda do seu curso</td></tr>
         </tbody>
       </table>
     </div>
 
-    <div class="tip"><span class="callout-label">ℹ Regra simples para escolher</span>É um <strong>treinamento</strong>? Aponte no projeto <strong>Treinamentos</strong>. É sobre algum <strong>projeto</strong>? Aponte no <strong>projeto</strong>. Nenhum dos dois? Aponte no projeto <strong>Agenda - Apontamento de Horas</strong>.</div>
+    <div class="tip"><span class="callout-label">ℹ Regra simples</span>Participou de um <strong>treinamento</strong> ou passou um tempo fazendo um <strong>curso</strong>? Aponte as horas no projeto <strong>Cursos / Treinamentos</strong>.</div>
 
     <div class="produto">
       <span class="callout-label">★ Benefícios para a gestão</span>
       <ul style="margin:8px 0 0 18px">
-        <li><strong>Visão do investimento em capacitação:</strong> mostra quanto tempo cada pessoa dedica a treinamentos.</li>
-        <li><strong>Projetos sem ruído:</strong> as horas de treinamento não se misturam com as horas dos projetos nem com as de gestão.</li>
-        <li><strong>Apontamento padronizado:</strong> todos registram as horas de treinamento no mesmo lugar e com o mesmo critério.</li>
-        <li><strong>Histórico permanente:</strong> as descrições de cada apontamento formam um registro dos conteúdos de cada treinamento.</li>
+        <li><strong>Visão do investimento em capacitação:</strong> mostra quanto tempo cada pessoa dedica a treinamentos e cursos.</li>
+        <li><strong>Acompanhamento das certificações:</strong> registra as horas de estudo nos cursos disponibilizados pela Be.</li>
+        <li><strong>Apontamento padronizado:</strong> todos registram as horas de cursos e treinamentos no mesmo lugar e com o mesmo critério.</li>
+        <li><strong>Histórico permanente:</strong> as descrições de cada apontamento formam um registro dos conteúdos estudados.</li>
       </ul>
     </div>
   </section>
@@ -555,33 +554,33 @@
   <!-- 02 CRIAR AGENDA -->
   <section id="sec-02">
     <p class="section-label">Seção 02</p>
-    <h2><span class="num">02</span>Como criar a agenda do treinamento</h2>
-    <p class="lead">Cada treinamento ganha <strong>uma agenda própria</strong>. Quem cria a agenda é <strong>quem ministra o treinamento</strong>. Os demais participantes apenas <strong>apontam as horas</strong> nela.</p>
+    <h2><span class="num">02</span>Como criar a agenda</h2>
+    <p class="lead">No <strong>treinamento</strong>, a agenda é responsabilidade do <strong>organizador</strong>: ele cria a agenda, inclui os participantes, e cada participante <strong>aponta as suas horas</strong> nela. No <strong>curso</strong> (certificações), <strong>cada pessoa tem autonomia</strong> para criar a agenda do seu curso, conforme a necessidade de horas, e apontar as horas dedicadas a ele.</p>
 
-    <div class="tip"><span class="callout-label">ℹ Link da chamada</span>O Zoho não gera nem armazena o link de vídeo. O convite do treinamento continua sendo criado no <strong>Google Meet</strong> (ou Google Calendar). A agenda no Zoho serve para o <strong>apontamento de horas</strong>, não para convidar para a chamada.<br><br>Acesse o projeto <strong>Treinamentos</strong> para criar a agenda e apontar as horas: <a href="https://sprints.zoho.com/workspace/wagner#P142/meetings" target="_blank" rel="noopener">abrir o projeto no Zoho Sprints</a>.</div>
+    <div class="tip"><span class="callout-label">ℹ Link da chamada</span>O Zoho não gera nem armazena o link de vídeo. O convite do treinamento continua sendo criado no <strong>Google Meet</strong> (ou Google Calendar). A agenda no Zoho serve para o <strong>apontamento de horas</strong>, não para convidar para a chamada.<br><br>Acesse o projeto <strong>Cursos / Treinamentos</strong> para criar a agenda e apontar as horas: <a href="https://sprints.zoho.com/workspace/wagner#P142/meetings" target="_blank" rel="noopener">abrir o projeto no Zoho Sprints</a>.</div>
 
     <div class="chain" aria-label="Fluxo resumido de criação">
-      <span class="chain-step">1. Projeto Treinamentos</span><span class="chain-arrow">→</span>
+      <span class="chain-step">1. Projeto Cursos / Treinamentos</span><span class="chain-arrow">→</span>
       <span class="chain-step">2. Módulo Reuniões</span><span class="chain-arrow">→</span>
       <span class="chain-step">3. Botão Schedule</span><span class="chain-arrow">→</span>
       <span class="chain-step">4. Assunto · Tipo Geral</span><span class="chain-arrow">→</span>
-      <span class="chain-step">5. Só uma vez</span><span class="chain-arrow">→</span>
+      <span class="chain-step">5. Só uma vez ou todos os dias</span><span class="chain-arrow">→</span>
       <span class="chain-step">6. Clicar em Schedule</span>
     </div>
 
     <h3 class="subhead">Passo a passo para criar a agenda</h3>
     <ol class="steps">
-      <li><p><strong>Abra o projeto Treinamentos</strong> no Zoho Sprints através do seletor superior de workspaces.</p></li>
+      <li><p><strong>Abra o projeto Cursos / Treinamentos</strong> no Zoho Sprints através do seletor superior de workspaces.</p></li>
       <li><p>No menu de navegação lateral esquerdo, clique em <span class="ui">Reuniões (Meetings)</span>.</p></li>
       <li><p>No canto superior direito, clique no botão <span class="ui">Schedule</span> para abrir o formulário de registro.</p></li>
-      <li><p>Informe o <strong>Meeting Title</strong> apenas com o <strong>assunto</strong> do treinamento. Ex.: <em>"Treinamento de Comunicação"</em>.</p></li>
+      <li><p>Informe o <strong>Meeting Title</strong> apenas com o <strong>assunto</strong> do treinamento ou do curso. Ex.: <em>"Treinamento de Comunicação"</em> ou <em>"Curso Google Skills"</em>.</p></li>
       <li><p>Defina a <strong>Data de início</strong> (primeiro dia de vigência da agenda) e a <strong>Hora</strong> nos seletores do formulário.</p></li>
       <li><p>Configure a <strong>Duração</strong> esperada para o encontro (ex.: 15m, 30m, 1h ou 2h).</p></li>
-      <li><p>Selecione como <strong>Participantes</strong> todas as pessoas que vão participar do treinamento e apontar horas nele.</p></li>
-      <li><p>No <strong>Tipo de Recorrência</strong>, mantenha <strong>Só uma vez</strong> — a agenda é criada uma única vez, só para esse treinamento (veja a Seção 03).</p></li>
+      <li><p>Selecione os <strong>Participantes</strong>: no treinamento, o organizador inclui todas as pessoas que vão participar e apontar horas nele; no curso, apenas você.</p></li>
+      <li><p>No <strong>Tipo de Recorrência</strong>: no treinamento, mantenha <strong>Só uma vez</strong>; no curso, escolha <strong>Só uma vez</strong> para um apontamento único ou <strong>Todos os dias</strong> para apontamentos diários, conforme a necessidade de horas do curso (veja a Seção 03).</p></li>
       <li><p>No campo <strong>Tipo de Reunião</strong>, selecione sempre <strong>Geral</strong>.</p></li>
       <li><p>Configure o campo <strong>Remind Before</strong>, definindo o tempo prévio de notificação (ex.: 10 ou 15 minutos).</p></li>
-      <li><p>Descreva a <strong>Pauta / Agenda</strong> com os tópicos e objetivos do encontro. Ex.: <em>"Apontamento de horas do treinamento"</em>.</p></li>
+      <li><p>Descreva a <strong>Pauta / Agenda</strong> com os tópicos e objetivos do encontro. Ex.: <em>"Apontamento de horas do treinamento"</em> ou <em>"Apontamento de horas do curso"</em>.</p></li>
       <li><p>Finalize clicando em <span class="ui">Schedule</span>. A agenda aparece imediatamente em <strong>Scheduled Meetings</strong>.</p></li>
     </ol>
   </section>
@@ -589,10 +588,10 @@
   <!-- 03 AGENDA ÚNICA -->
   <section id="sec-03">
     <p class="section-label">Seção 03</p>
-    <h2><span class="num">03</span>Agenda única, sem recorrência</h2>
-    <p class="lead">Diferente das agendas de projeto, que valem por 30 dias, aqui <strong>cada treinamento tem a sua própria agenda</strong>, criada uma única vez.</p>
+    <h2><span class="num">03</span>Recorrência da agenda</h2>
+    <p class="lead">O <strong>treinamento</strong> tem uma agenda para cada encontro, criada uma única vez. No <strong>curso</strong>, a recorrência acompanha a necessidade de horas: um apontamento único ou apontamentos diários.</p>
 
-    <div class="callout-alert"><span class="callout-label">⚠ Muito importante</span>Crie <strong>uma agenda para cada treinamento</strong>, com a recorrência <strong>Só uma vez</strong>. Não use a configuração de 30 dias das agendas de projeto. Se o treinamento tiver mais de um encontro (ex.: um módulo 2 em outro dia), <strong>crie uma nova agenda</strong> para esse novo encontro.</div>
+    <div class="callout-alert"><span class="callout-label">⚠ Muito importante</span><strong>Treinamento:</strong> o organizador cria <strong>uma agenda para cada encontro</strong>, com a recorrência <strong>Só uma vez</strong>. Se o treinamento tiver mais de um encontro (ex.: um módulo 2 em outro dia), <strong>crie uma nova agenda</strong>.<br><br><strong>Curso:</strong> crie a agenda conforme a necessidade de horas do curso — <strong>Só uma vez</strong> para um apontamento único ou <strong>Todos os dias</strong> para apontamentos diários enquanto estiver fazendo o curso.</div>
 
     <details class="acc" open>
       <summary>
@@ -602,10 +601,11 @@
       </summary>
       <div class="acc-body">
         <ul>
-          <li><strong>Projeto:</strong> sempre <strong>Treinamentos</strong>.</li>
-          <li><strong>Tipo de Recorrência:</strong> sempre <strong>Só uma vez</strong>. Não use "Todos os dias", "Semanal", "Quinzenal" ou "Mensal".</li>
+          <li><strong>Projeto:</strong> sempre <strong>Cursos / Treinamentos</strong>.</li>
+          <li><strong>Tipo de Recorrência — treinamento:</strong> sempre <strong>Só uma vez</strong>.</li>
+          <li><strong>Tipo de Recorrência — curso:</strong> <strong>Só uma vez</strong> (apontamento único) ou <strong>Todos os dias</strong> (apontamentos diários), conforme a necessidade de horas do curso.</li>
           <li><strong>Tipo de Reunião:</strong> sempre <strong>Geral</strong>.</li>
-          <li><strong>Uma agenda por treinamento:</strong> cada encontro tem a sua própria agenda, criada uma única vez por quem ministra o treinamento.</li>
+          <li><strong>Quem cria:</strong> no treinamento, o organizador; no curso, a própria pessoa.</li>
         </ul>
       </div>
     </details>
@@ -613,36 +613,37 @@
     <details class="acc">
       <summary>
         <span class="acc-num">3.2</span>
-        <span><span class="acc-title">Quem cria e quem aponta</span><span class="acc-sub">Papéis no treinamento</span></span>
+        <span><span class="acc-title">Quem cria e quem aponta</span><span class="acc-sub">Treinamento × curso</span></span>
         <span class="acc-caret" aria-hidden="true"></span>
       </summary>
       <div class="acc-body">
         <div class="duo">
           <div class="duo-card">
-            <span class="who">Quem ministra</span>
-            <h4>Cria a agenda</h4>
+            <span class="who">Treinamento</span>
+            <h4>O organizador cria</h4>
             <ul>
-              <li><strong>Quem é:</strong> a pessoa que conduz o treinamento</li>
-              <li><strong>O que faz:</strong> cria a agenda no projeto Treinamentos</li>
+              <li><strong>Quem cria:</strong> o organizador do treinamento</li>
               <li><strong>Título:</strong> apenas o assunto do treinamento</li>
-              <li><strong>Participantes:</strong> todos que vão participar</li>
-              <li><strong>Horas:</strong> também aponta as próprias horas na agenda</li>
+              <li><strong>Participantes:</strong> o organizador inclui todos que vão participar</li>
+              <li><strong>Horas:</strong> cada participante aponta as suas horas na agenda</li>
+              <li><strong>Participantes não criam agenda:</strong> localizam a agenda criada pelo organizador</li>
             </ul>
           </div>
           <span class="x" aria-hidden="true">×</span>
           <div class="duo-card">
-            <span class="who">Participantes</span>
-            <h4>Apontam as horas</h4>
+            <span class="who">Curso</span>
+            <h4>Cada um cria o seu</h4>
             <ul>
-              <li><strong>Quem é:</strong> todas as pessoas que assistem ao treinamento</li>
-              <li><strong>O que faz:</strong> não cria agenda — localiza a agenda criada por quem ministra</li>
-              <li><strong>Horas:</strong> aponta o tempo que ficou no treinamento</li>
-              <li><strong>Descrição:</strong> obrigatória em todo apontamento</li>
-              <li><strong>Faturamento:</strong> sempre Faturável</li>
+              <li><strong>Quem cria:</strong> a própria pessoa, com autonomia</li>
+              <li><strong>Título:</strong> o nome do curso (ex.: Curso Google Skills)</li>
+              <li><strong>Participantes:</strong> apenas você</li>
+              <li><strong>Recorrência:</strong> Só uma vez ou Todos os dias, conforme a necessidade de horas</li>
+              <li><strong>Horas:</strong> o tempo que você dedicou ao curso</li>
+              <li><strong>Descrição:</strong> obrigatória · <strong>Faturamento:</strong> sempre Faturável</li>
             </ul>
           </div>
         </div>
-        <div class="tip"><span class="callout-label">⚡ Evite agendas duplicadas</span>Só <strong>quem ministra</strong> cria a agenda. Se você é participante, procure a agenda criada por quem ministra em vez de criar outra.</div>
+        <div class="tip"><span class="callout-label">⚡ Evite agendas duplicadas</span>No treinamento, só o <strong>organizador</strong> cria a agenda. Se você é participante, procure a agenda criada pelo organizador em vez de criar outra.</div>
       </div>
     </details>
   </section>
@@ -651,34 +652,34 @@
   <section id="sec-04">
     <p class="section-label">Seção 04</p>
     <h2><span class="num">04</span>Apontamento de horas</h2>
-    <p class="lead">A finalidade da agenda é o <strong>apontamento de horas</strong>. Cada participante registra o tempo que ficou no treinamento, na agenda criada para ele dentro do projeto <strong>Treinamentos</strong>.</p>
+    <p class="lead">A finalidade da agenda é o <strong>apontamento de horas</strong>. Cada pessoa registra o tempo que ficou no treinamento ou no curso, na agenda correspondente dentro do projeto <strong>Cursos / Treinamentos</strong>.</p>
 
-    <div class="produto"><span class="callout-label">★ Para que serve a agenda</span>A agenda <strong>não</strong> é o convite do treinamento — ela é o <strong>lugar onde as horas do treinamento são apontadas</strong>. Assim a gestão sabe quanto tempo cada pessoa dedicou a treinamentos.</div>
+    <div class="produto"><span class="callout-label">★ Para que serve a agenda</span>A agenda <strong>não</strong> é o convite do treinamento — ela é o <strong>lugar onde as horas do treinamento ou do curso são apontadas</strong>. Assim a gestão sabe quanto tempo cada pessoa dedicou a cursos e treinamentos.</div>
 
     <h3 class="subhead">Registrar horas — aba Quadro de horários</h3>
-    <p class="lead" style="margin-bottom:8px">A aba <strong>Quadro de horários</strong> acompanha e mantém o tempo que os usuários dedicaram ao treinamento. Enquanto nenhuma hora foi apontada, ela exibe o aviso <em>"Parece que você ainda não adicionou horas de registro"</em>.</p>
+    <p class="lead" style="margin-bottom:8px">A aba <strong>Quadro de horários</strong> acompanha e mantém o tempo que os usuários dedicaram ao treinamento ou ao curso. Enquanto nenhuma hora foi apontada, ela exibe o aviso <em>"Parece que você ainda não adicionou horas de registro"</em>.</p>
 
-    <div class="callout-alert"><span class="callout-label">⏱ Só depois do término do treinamento</span>O Zoho <strong>só libera o apontamento de horas depois que o treinamento termina</strong>, considerando a hora e a duração cadastradas na agenda. Antes disso, o sistema não deixa registrar. Ex.: treinamento agendado para <strong>12:00</strong> com duração de <strong>15 minutos</strong> → o apontamento só fica disponível a partir de <strong>12:17</strong>.</div>
+    <div class="callout-alert"><span class="callout-label">⏱ Só depois do término</span>O Zoho <strong>só libera o apontamento de horas depois que o horário da agenda termina</strong>, considerando a hora e a duração cadastradas. Antes disso, o sistema não deixa registrar. Ex.: agenda criada para <strong>12:00</strong> com duração de <strong>15 minutos</strong> → o apontamento só fica disponível a partir de <strong>12:17</strong>.</div>
     <ol class="steps">
-      <li><p>No projeto <strong>Treinamentos</strong>, abra a agenda do treinamento e clique na aba <span class="ui">Quadro de horários</span>.</p></li>
+      <li><p>No projeto <strong>Cursos / Treinamentos</strong>, abra a agenda do treinamento ou do curso e clique na aba <span class="ui">Quadro de horários</span>.</p></li>
       <li><p>Clique no botão <span class="ui">+ Adicionar Horas de Log</span>, no canto superior direito.</p></li>
-      <li><p>No formulário exibido, informe o <strong>colaborador</strong>, a <strong>data</strong> do treinamento e a <strong>quantidade de horas</strong> que você ficou no treinamento.</p></li>
-      <li><p>Preencha o campo <strong>Descrição</strong> com a <strong>pauta</strong> ou um <strong>breve resumo</strong> do que foi tratado no treinamento — <strong>obrigatório</strong>.</p></li>
+      <li><p>No formulário exibido, informe o <strong>colaborador</strong>, a <strong>data</strong> e a <strong>quantidade de horas</strong> que você ficou no treinamento ou no curso.</p></li>
+      <li><p>Preencha o campo <strong>Descrição</strong> com a <strong>pauta</strong> ou um <strong>breve resumo</strong> do que foi tratado ou estudado — <strong>obrigatório</strong>.</p></li>
       <li><p>Defina o <strong>status de faturamento</strong> como <strong>Faturável</strong>.</p></li>
-      <li><p>Salve o registro. A aba passa a exibir o total de horas apontadas por participante naquele treinamento.</p></li>
+      <li><p>Salve o registro. A aba passa a exibir o total de horas apontadas por pessoa naquela agenda.</p></li>
     </ol>
 
-    <div class="callout-alert"><span class="callout-label">⛔ Descrição obrigatória</span><strong>Nenhum apontamento pode ser salvo com a descrição em branco.</strong> Ao registrar horas, informe sempre a <strong>pauta</strong> ou um <strong>breve resumo do que foi tratado</strong> no treinamento. Ex.: <em>"Treinamento de comunicação — estrutura de apresentações e como conduzir reuniões com clientes"</em>. Sem descrição, não é possível identificar o treinamento a que as horas se referem.</div>
+    <div class="callout-alert"><span class="callout-label">⛔ Descrição obrigatória</span><strong>Nenhum apontamento pode ser salvo com a descrição em branco.</strong> Ao registrar horas, informe sempre a <strong>pauta</strong> ou um <strong>breve resumo do que foi tratado ou estudado</strong>. Ex.: <em>"Treinamento de comunicação — estrutura de apresentações e como conduzir reuniões com clientes"</em> ou <em>"Curso Google Skills — módulo 2 da trilha de certificação"</em>. Sem descrição, não é possível identificar a que as horas se referem.</div>
 
     <div class="tip"><span class="callout-label">💰 Status de faturamento</span>O status de faturamento do apontamento deve ser <strong>sempre "Faturável"</strong>.</div>
 
     <h3 class="subhead">Checklist de cada apontamento</h3>
     <div class="rules">
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Projeto certo:</strong> treinamento → projeto Treinamentos.</p></div>
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Agenda certa:</strong> a agenda criada para esse treinamento por quem ministra.</p></div>
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Descrição preenchida:</strong> pauta ou breve resumo do que foi tratado.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Projeto certo:</strong> treinamento ou curso → projeto Cursos / Treinamentos.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Agenda certa:</strong> no treinamento, a agenda criada pelo organizador; no curso, a sua própria agenda do curso.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Descrição preenchida:</strong> pauta ou breve resumo do que foi tratado ou estudado.</p></div>
       <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Faturamento:</strong> status definido como <strong>Faturável</strong>.</p></div>
-      <div class="rule no"><span class="mark" aria-hidden="true">✕</span><p><strong>Não faça:</strong> apontar aqui reuniões de projeto ou de gestão, criar uma segunda agenda para o mesmo treinamento ou salvar apontamento sem descrição.</p></div>
+      <div class="rule no"><span class="mark" aria-hidden="true">✕</span><p><strong>Não faça:</strong> criar uma segunda agenda para o mesmo treinamento ou salvar apontamento sem descrição.</p></div>
     </div>
   </section>
 
@@ -695,8 +696,8 @@
         </thead>
         <tbody>
           <tr><td><strong>1. SCHEDULED</strong><br><span style="font-size:.8rem">(Agendada)</span></td><td>Disparado no instante da confirmação do agendamento. Traz título, data, hora, duração, local e pauta completa.</td><td>Todos os participantes selecionados</td></tr>
-          <tr><td><strong>2. REMINDER</strong><br><span style="font-size:.8rem">(Lembrete)</span></td><td>Calculado com base em <strong>Remind Before</strong>. Disparado no intervalo configurado antes do início.</td><td>Participantes do treinamento</td></tr>
-          <tr><td><strong>3. RESCHEDULED</strong><br><span style="font-size:.8rem">(Reagendada)</span></td><td>Enviado quando a data, hora, duração ou pauta do treinamento é alterada, sinalizando as alterações.</td><td>Todos os participantes do treinamento</td></tr>
+          <tr><td><strong>2. REMINDER</strong><br><span style="font-size:.8rem">(Lembrete)</span></td><td>Calculado com base em <strong>Remind Before</strong>. Disparado no intervalo configurado antes do início.</td><td>Participantes da agenda</td></tr>
+          <tr><td><strong>3. RESCHEDULED</strong><br><span style="font-size:.8rem">(Reagendada)</span></td><td>Enviado quando a data, hora, duração ou pauta da agenda é alterada, sinalizando as alterações.</td><td>Todos os participantes da agenda</td></tr>
         </tbody>
       </table>
     </div>
@@ -708,20 +709,20 @@
   <section id="sec-06">
     <p class="section-label">Seção 06</p>
     <h2><span class="num">06</span>Acompanhamento e gestão de status</h2>
-    <p class="lead">O módulo Reuniões do projeto <strong>Treinamentos</strong> organiza visualmente todos os treinamentos e as horas apontadas em cada um.</p>
+    <p class="lead">O módulo Reuniões do projeto <strong>Cursos / Treinamentos</strong> organiza visualmente todos os treinamentos e cursos e as horas apontadas em cada um.</p>
 
     <h3 class="subhead">Modos de visualização</h3>
     <div class="duo">
       <div class="duo-card">
         <span class="who">Grid View</span>
         <h4>Modo cards</h4>
-        <p>Cada treinamento em um card modular com contagem regressiva, participantes com avatars e dados do registro.</p>
+        <p>Cada agenda em um card modular com contagem regressiva, participantes com avatars e dados do registro.</p>
       </div>
       <span class="x" aria-hidden="true">×</span>
       <div class="duo-card">
         <span class="who">List View</span>
         <h4>Modo tabela</h4>
-        <p>Visão tabular com filtros avançados — ideal para localizar rapidamente a agenda de um treinamento pelo assunto.</p>
+        <p>Visão tabular com filtros avançados — ideal para localizar rapidamente a agenda de um treinamento ou curso pelo assunto.</p>
       </div>
     </div>
 
@@ -730,22 +731,22 @@
       <div class="flow-card">
         <span class="step-tag">1 · aguardando</span>
         <h4>Scheduled</h4>
-        <p>Treinamentos com data e hora futuras. Ação: conferir se a agenda foi criada com os participantes certos.</p>
+        <p>Agendas com data e hora futuras. Ação: conferir se a agenda foi criada com os participantes certos.</p>
       </div>
       <div class="flow-card">
         <span class="step-tag">2 · em andamento</span>
         <h4>Ongoing</h4>
-        <p>Atingiu a hora agendada — o treinamento está acontecendo no <strong>Google Meet</strong>. O apontamento de horas só é liberado após o término.</p>
+        <p>Atingiu a hora agendada — o treinamento ou o curso está acontecendo. O apontamento de horas só é liberado após o término.</p>
       </div>
       <div class="flow-card">
         <span class="step-tag">3 · finalizada</span>
         <h4>Completed</h4>
-        <p>Treinamentos passados. Ação: conferir se todos os participantes apontaram horas com descrição e status Faturável.</p>
+        <p>Agendas passadas. Ação: conferir se todos apontaram horas com descrição e status Faturável.</p>
       </div>
     </div>
 
     <h3 class="subhead">Abas de uma reunião</h3>
-    <p class="lead" style="margin-bottom:8px">Ao abrir o registro de um treinamento, quatro abas organizam as informações no topo da página:</p>
+    <p class="lead" style="margin-bottom:8px">Ao abrir o registro de uma agenda, quatro abas organizam as informações no topo da página:</p>
     <div class="flow">
       <div class="flow-card">
         <span class="step-tag">Aba 1</span>
@@ -755,12 +756,12 @@
       <div class="flow-card">
         <span class="step-tag">Aba 2</span>
         <h4>Agenda</h4>
-        <p>A pauta descrita no agendamento — os tópicos e objetivos do treinamento.</p>
+        <p>A pauta descrita no agendamento — os tópicos e objetivos do treinamento ou do curso.</p>
       </div>
       <div class="flow-card">
         <span class="step-tag">Aba 3</span>
         <h4>Comentários</h4>
-        <p>Registro de materiais, links e observações do treinamento.</p>
+        <p>Registro de materiais, links e observações.</p>
       </div>
       <div class="flow-card">
         <span class="step-tag">Aba 4</span>
@@ -771,46 +772,45 @@
 
     <p class="lead" style="margin-bottom:8px">Na barra lateral direita, duas ações centrais:</p>
     <ul style="margin:0 0 0 20px;color:var(--ink-soft);font-size:.95rem">
-      <li style="margin-bottom:6px"><strong>Botão Add (+):</strong> anexar complementos e registrar comentários durante ou após o treinamento.</li>
+      <li style="margin-bottom:6px"><strong>Botão Add (+):</strong> anexar complementos e registrar comentários durante ou após o treinamento ou o curso.</li>
       <li><strong>Botão Delete:</strong> permite a quem criou a agenda remover o registro caso tenha sido criado por engano.</li>
     </ul>
 
-    <div class="produto"><span class="callout-label">★ Memória dos treinamentos</span>Use os <strong>Comentários</strong> para registrar materiais, links e observações. Somados às descrições dos apontamentos, eles formam um histórico dos conteúdos de cada treinamento.</div>
+    <div class="produto"><span class="callout-label">★ Memória da capacitação</span>Use os <strong>Comentários</strong> para registrar materiais, links e observações. Somados às descrições dos apontamentos, eles formam um histórico dos conteúdos de cada treinamento e curso.</div>
   </section>
 
   <!-- 07 DICAS PRÁTICAS -->
   <section id="sec-07">
     <p class="section-label">Seção 07</p>
     <h2><span class="num">07</span>Dicas práticas de uso no dia a dia</h2>
-    <p class="lead">Diretrizes para manter o apontamento de treinamentos organizado.</p>
+    <p class="lead">Diretrizes para manter o apontamento de cursos e treinamentos organizado.</p>
 
-    <div class="callout-alert"><span class="callout-label">⛔ Regra fundamental</span><strong>Hora sem descrição é hora sem rastreabilidade.</strong> Todo apontamento deve informar a <strong>pauta</strong> ou um <strong>breve resumo do que foi tratado</strong> no treinamento, com status de faturamento <strong>Faturável</strong>.</div>
+    <div class="callout-alert"><span class="callout-label">⛔ Regra fundamental</span><strong>Hora sem descrição é hora sem rastreabilidade.</strong> Todo apontamento deve informar a <strong>pauta</strong> ou um <strong>breve resumo do que foi tratado ou estudado</strong>, com status de faturamento <strong>Faturável</strong>.</div>
 
     <div class="table-wrap">
       <table class="dtable">
         <thead>
-          <tr><th>Reunião</th><th>Onde apontar</th><th>Exemplo de descrição</th></tr>
+          <tr><th>Atividade</th><th>Onde apontar</th><th>Exemplo de descrição</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Treinamento de comunicação</strong></td><td>Treinamentos</td><td>"Treinamento de comunicação — estrutura de apresentações para clientes."</td></tr>
-          <tr><td><strong>Reunião de um projeto</strong></td><td>Agenda Interna ou Externa do projeto</td><td>Siga o guia <a href="guia-apontamento-horas.html">Apontamento de Horas em Projetos</a>.</td></tr>
-          <tr><td><strong>Reunião de gestão ou com heads</strong></td><td>Agenda - Apontamento de Horas</td><td>Siga o guia <a href="guia-apontamento-horas-fora-projeto.html">Apontamento de Horas Fora de Projeto</a>.</td></tr>
+          <tr><td><strong>Treinamento de comunicação</strong></td><td>Cursos / Treinamentos</td><td>"Treinamento de comunicação — estrutura de apresentações para clientes."</td></tr>
+          <tr><td><strong>Curso para certificação</strong></td><td>Cursos / Treinamentos</td><td>"Curso Google Skills — módulo 2 da trilha de certificação."</td></tr>
         </tbody>
       </table>
     </div>
 
     <h3 class="subhead">Boas práticas de governança</h3>
     <div class="rules">
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Uma agenda por treinamento:</strong> criada uma única vez por quem ministra, com Tipo <strong>Geral</strong> e recorrência <strong>Só uma vez</strong>.</p></div>
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Só quem ministra cria:</strong> assim não surgem agendas duplicadas para o mesmo treinamento.</p></div>
-      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Apontamento no mesmo dia:</strong> registre as horas logo após o treinamento, enquanto o conteúdo ainda está fresco para a descrição.</p></div>
-      <div class="rule no"><span class="mark" aria-hidden="true">✕</span><p><strong>Nunca misture:</strong> reuniões de projeto e de gestão não são apontadas aqui — cada uma tem o seu próprio lugar.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Recorrência certa:</strong> treinamento com <strong>Só uma vez</strong>; curso com <strong>Só uma vez</strong> ou <strong>Todos os dias</strong>, conforme a necessidade. Sempre com Tipo <strong>Geral</strong>.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>No treinamento, só o organizador cria:</strong> assim não surgem agendas duplicadas para o mesmo treinamento.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Apontamento no mesmo dia:</strong> registre as horas logo após o treinamento ou o estudo, enquanto o conteúdo ainda está fresco para a descrição.</p></div>
+      <div class="rule ok"><span class="mark" aria-hidden="true">✓</span><p><strong>Tempo de curso conta:</strong> se você não estiver em demanda e usar o tempo para estudar, registre essas horas aqui.</p></div>
     </div>
   </section>
 </main>
 
 <footer>
-  Be Solution · Data Intelligence - Guia interno · atualizado em 05/11/2026
+  Be Solution · Data Intelligence - Guia interno · atualizado em 11/11/2026
 </footer>
 
 
